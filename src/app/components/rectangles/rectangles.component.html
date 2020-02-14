@@ -1,0 +1,35 @@
+<div class="container select-file">
+  <h1>Select File</h1>
+  <input
+    style="display: none"
+    type="file"
+    (change)="onFileUpload($event)"
+    #hiddenFileInput
+  />
+
+  <button class="btn btn-select-file" (click)="hiddenFileInput.click()">
+    Choose...
+  </button>
+
+  <br /><br />
+
+  <div *ngIf="isFileSelected">
+    <div *ngIf="!rectangles; else searchResult">
+      <div class="spinner-border text-success" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <ng-template #searchResult>
+      Rectangles found: {{ rectangles.length }}
+      <div *ngFor="let rectangle of rectangles">
+        <p>
+          [ A( {{ rectangle.A.x }},{{ rectangle.A.y }} ), B (
+          {{ rectangle.B.x }},{{ rectangle.B.y }} ), C ( {{ rectangle.C.x }},{{
+            rectangle.C.y
+          }}
+          ), D ( {{ rectangle.D.x }},{{ rectangle.D.y }} ) ]
+        </p>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.select-file {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn-select-file {
+  color: #343a40;
+  background-color: #f7ca18;
+  font-weight: bold;
+}
+
+.btn-select-file:hover,
+.btn-select-file:active {
+  background-color: #f7b418;
+  transition: background-color 0.3s;
+}
+
+.btn-select-file:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
